@@ -1,5 +1,14 @@
 import requests
 
+ funcao = int(input("Ola Tudo bom!\nEscolha umas das opções abaixo: \n\n  -Digite 1 para buscar CEP\n\n  -Digite 2 Para buscar RUA\n\n\n"))
+  if funcao == 2:
+    print("\n BUSCA DE LAGRADOURO\n_______________________\n")
+    buscar_cep_por_rua()
+  else:
+    print("\n BUSCA DE CEP
+    \n_______________________\n")
+    buscar_rua_por_cep()
+
 def buscar_cep_por_rua():
     v_lagradouro = input("Digite o nome do Lagradouro:")
     v_cidade = input("Digite o nome da Cidade:")
@@ -20,7 +29,7 @@ def buscar_cep_por_rua():
 
     endereco = response.json()
 
-    # laco de repecição na lista de dicionários
+ # laco de repecição na lista de dicionários
     print('\nEncontramos '+str(len(endereco))+' Resultado(s)\n')
 
     for i in range(0, len(endereco)):
@@ -49,13 +58,5 @@ def buscar_rua_por_cep():
       print( i.upper(), ": ", endereco[i])
 
 
-  funcao = int(input("Ola Tudo bom!\nEscolha umas das opções abaixo: \n\n  -Digite 1 para buscar CEP\n\n  -Digite 2 Para buscar RUA\n\n\n"))
-  if funcao == 2:
-    print("\n BUSCA DE LAGRADOURO\n_______________________\n")
-    buscar_cep_por_rua()
-  else:
-    print("\n BUSCA DE CEP
-    \n_______________________\n")
-    buscar_rua_por_cep()
-
+ 
     
